@@ -8,10 +8,6 @@ onready var world = get_tree().root
 var rotationLimit = 80
 var speed = 180
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
 func _process(delta):
 	var dir = 0
 	if Input.is_action_pressed("ui_left"):
