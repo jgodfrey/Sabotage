@@ -2,9 +2,9 @@ extends Area2D
 
 var velocity = Vector2()
 
-func start(pos, dir, vel):
+func start(pos, dir, speed):
 	position = pos
-	velocity = vel * dir
+	velocity = dir * speed
 	if dir == Vector2.LEFT:
 		$Sprite.flip_h = true
 		rotation_degrees = -5

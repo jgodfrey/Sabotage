@@ -3,23 +3,17 @@ extends Node2D
 onready var chopper = preload("res://Enemies/Chopper.tscn")
 
 func _ready():
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta):
-	if randi() % 100 == 50:
+	if Utils.getRandomIntBetween(1, 100) == 50:
 		spawn_chopper()
 
 func spawn_chopper():
-	var val = randi() % 2
-	var dir
-	var x
-	if val:
-		x = 0
-		dir = Vector2.RIGHT
-	else:
-		x = 280
-		dir = Vector2.LEFT
-
+	var dir = Utils.getRandomLeftOrRightVector()
+	var x_pos = 0 if dir == Vector2.RIGHT else Globals.screenSize.x
+	var y_pos = Utils.getRandomIntBetween(10, 80)
+	var speed = Utils.getRandomIntBetween(50, 100)
 	var c = chopper.instance()
-	c.start(Vector2(x, 10 + randi() % 100), dir, 50 + randi() % 50)
+	c.start(Vector2(x_pos, y_pos), dir, speed)
 	add_child(c)

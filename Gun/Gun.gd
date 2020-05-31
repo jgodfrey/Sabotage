@@ -3,7 +3,7 @@ extends Node2D
 onready var gun = $Barrel
 onready var bullet = preload("res://Bullet/Bullet.tscn")
 onready var barrelTip = $Barrel/Position2D
-onready var world = get_tree().root
+onready var world = get_parent()
 
 var rotationLimit = 80
 var speed = 180

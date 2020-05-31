@@ -19,6 +19,11 @@ config/name="Sabotage"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Globals.gd"
+Utils="*res://Utils.gd"
+
 [display]
 
 window/size/width=280
