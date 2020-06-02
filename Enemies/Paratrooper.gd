@@ -14,9 +14,13 @@ func _on_Man_area_entered(area):
 		area.queue_free()
 		queue_free()
 	elif area.is_in_group("ground"):
-		velocity = Vector2.ZERO
-		position = Vector2(position.x, Globals.screenSize.y - 7)
-		hideParachute()
+		# if this guy hit the ground without a parachute, kill him
+		if !$Parachute/Sprite.visible:
+			queue_free()
+		else:
+			velocity = Vector2.ZERO
+			position = Vector2(position.x, Globals.screenSize.y - 7)
+			hideParachute()
 
 func _on_Parachute_area_entered(area):
 	if area.is_in_group("bullet"):

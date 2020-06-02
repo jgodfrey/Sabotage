@@ -7,7 +7,8 @@ func _ready():
 
 func _process(delta):
 	if Utils.getRandomIntBetween(1, 100) == 50:
-		spawn_chopper()
+		if get_tree().get_nodes_in_group("chopper").size() < 4:
+			spawn_chopper()
 
 func spawn_chopper():
 	var dir = Utils.getRandomLeftOrRightVector()

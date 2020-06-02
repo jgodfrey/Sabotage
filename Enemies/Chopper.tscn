@@ -7,7 +7,9 @@
 radius = 5.75009
 height = 9.46226
 
-[node name="Chopper" type="Area2D"]
+[node name="Chopper" type="Area2D" groups=[
+"chopper",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
