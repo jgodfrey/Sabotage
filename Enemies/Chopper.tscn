@@ -18,7 +18,7 @@ initial_velocity = 35.0
 angular_velocity = 60.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 3.5
+scale = 4.0
 scale_random = 1.0
 
 [node name="Chopper" type="Area2D" groups=[
