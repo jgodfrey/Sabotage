@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/engine1.ogg-29deb368496d77ba8c316b0cbd1fc3d3.oggstr"
+
+[deps]
+
+source_file="res://Enemies/engine1.ogg"
+dest_files=[ "res://.import/engine1.ogg-29deb368496d77ba8c316b0cbd1fc3d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

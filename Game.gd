@@ -1,9 +1,12 @@
 extends Node2D
 
 onready var chopper = preload("res://Enemies/Chopper.tscn")
+var chopper_count = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	$DebugOverlay.add_stat("FPS", Engine, "get_frames_per_second", true)
+	$DebugOverlay.add_stat("Choppers", self, "chopper_count", false)
 
 func _process(delta):
 	if Utils.getRandomIntBetween(1, 100) == 50:
@@ -18,3 +21,4 @@ func spawn_chopper():
 	var c = chopper.instance()
 	c.start(Vector2(x_pos, y_pos), dir, speed)
 	add_child(c)
+	chopper_count += 1
