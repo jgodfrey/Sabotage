@@ -2,7 +2,7 @@ extends Area2D
 
 onready var paratrooper = preload("res://Enemies/Paratrooper.tscn")
 var velocity = Vector2()
-onready var world = get_parent().get_parent()
+onready var world = get_parent()
 var dead = false
 
 func start(pos, dir, speed):

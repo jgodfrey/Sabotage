@@ -24,3 +24,7 @@ func _process(delta):
 	if dir != 0:
 		var rot = clamp(gun.rotation_degrees + dir * delta * speed, -rotationLimit, rotationLimit)
 		gun.rotation_degrees = rot
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("man"):
+		get_tree().reload_current_scene()
